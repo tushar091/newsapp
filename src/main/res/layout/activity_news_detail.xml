@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="detailVm"
+            type="com.example.byju.ui.viewModel.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            app:newsImage="@{detailVm.imageUrl}"
+            android:id="@+id/news_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:textColor="@color/subtextColor"
+            android:layout_margin="24dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{detailVm.content}" />
+
+        <TextView
+            android:id="@+id/sourceTv"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="24dp"
+            app:layout_constraintBottom_toTopOf="@id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{detailVm.source}" />
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_margin="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{detailVm.time}" />
+
+        <TextView
+            android:layout_margin="24dp"
+            android:id="@+id/headlinesTv"
+            android:textSize="29sp"
+            android:textColor="@color/headlineColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{detailVm.headLines}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
